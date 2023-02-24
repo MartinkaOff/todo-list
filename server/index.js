@@ -3,12 +3,14 @@ const connection = require("./db");
 const cors = require("cors");
 const express = require("express");
 const app = express();
+const authUsers = require('./routes/authUsers');
 
 connection();
 
 
 app.use(express.json());
 app.use(cors());
+app.use("/auth", authUsers)
 
 app.use("/api/tasks", tasks);
 

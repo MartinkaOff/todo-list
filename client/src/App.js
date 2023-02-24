@@ -2,10 +2,15 @@ import React from "react";
 import Tasks from "./Tasks";
 import { Paper, TextField } from "@material-ui/core";
 import { Checkbox, Button } from "@material-ui/core";
+
 import "./App.css";
 
 class App extends Tasks {
-    state = { tasks: [], currentTask: "" };
+    constructor(props){
+        super(props);
+        this.state = { tasks: [], currentTask: ""};
+    }
+
     render() {
         const { tasks } = this.state;
         return (
@@ -24,7 +29,7 @@ class App extends Tasks {
                             value={this.state.currentTask}
                             required={true}
                             onChange={this.handleChange}
-                            placeholder="Add New TO-DO"
+                            placeholder="Введите задачу"
                         />
                         <Button
                             style={{ height: "40px" }}
@@ -32,7 +37,7 @@ class App extends Tasks {
                             variant="outlined"
                             type="submit"
                         >
-                            Add task
+                            Добавить задачу
                         </Button>
                     </form>
                     <div>
@@ -59,7 +64,7 @@ class App extends Tasks {
                                     onClick={() => this.handleDelete(task._id)}
                                     color="secondary"
                                 >
-                                    delete
+                                    Удалить
                                 </Button>
                             </Paper>
                         ))}

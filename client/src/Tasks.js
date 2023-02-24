@@ -3,11 +3,11 @@ import {
     addTask,
     getTasks,
     updateTask,
-    deleteTask,
+    deleteTask
 } from "./services/taskServices";
 
 class Tasks extends Component {
-    state = { tasks: [], currentTask: "" };
+    state = { tasks: [], currentTask: ""};
 
     async componentDidMount() {
         try {
@@ -21,6 +21,7 @@ class Tasks extends Component {
     handleChange = ({ currentTarget: input }) => {
         this.setState({ currentTask: input.value });
     };
+
 
     handleSubmit = async (e) => {
         e.preventDefault();
